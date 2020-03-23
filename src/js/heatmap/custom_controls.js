@@ -25,14 +25,14 @@ function addYourLocationButton(map) {
     firstChild.style.boxShadow = '0 1px 4px rgba(0,0,0,0.3)';
     firstChild.style.cursor = 'pointer';
     firstChild.style.marginRight = '10px';
-    firstChild.style.padding = '0px 0px 0px 3px';
+    firstChild.style.padding = '7px 0px 3px 7px';
     firstChild.title = 'Your Location';
     controlDiv.appendChild(firstChild);
 
     var secondChild = document.createElement('div');
     secondChild.style.width = '4.2em';
     secondChild.style.height = '3.4em';
-    secondChild.style.backgroundImage = 'url(./src/img/my_location.png)';
+    secondChild.style.backgroundImage = 'url(./src/img/gps-location.svg)';
     secondChild.style.backgroundPosition = '0 0';
     secondChild.style.backgroundRepeat = 'no-repeat';
     firstChild.appendChild(secondChild);
