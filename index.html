@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Requires meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Start imports -->
+    <script type="text/javascript" src="./src/js/util/utils.js"></script>
+    <script type="text/javascript" src="./src/js/services/google_api_service.js"></script>
+    <script type="text/javascript" src="./src/js/services/heatmap_service.js"></script>
+    <script type="text/javascript" src="./src/js/heatmap/config_heatmap.js"></script>
+    <script type="text/javascript" src="./src/js/heatmap/custom_controls.js"></script>
+    <script type="text/javascript" src="./src/js/heatmap/init_heatmap.js"></script>
+    <!-- End imports -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.4.0/Rx.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0dfVNHfNjet4egULUmVhvcM5-0Rnp3xo&libraries=visualization,places">
+        </script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/site.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body onload="initMapConfig()">
+    <div id="div-alert" style="display: none;">
+        <div class="card w-100 h-100">
+            <div id="div-card">
+                <a id="card-title" class="card-title">Card title</a>
+            </div>
+            <div class="quantity-persons">
+                <p>Quantidade de Pessoas: <span id="total-persons">20</span></p>
+            </div>
+            <div id="div-create-alert">
+                <a id="btn_create_alert" href="#" class="btn btn-primary">Criar Alerta</a>
+            </div>
+        </div>
+    </div>
+    <div id="pac-input">
+        <div id="search">
+            <input id="search-input" placeholder="Pesquise pela localização desejada" />
+            <i id="ic-search" class="fa fa-search ic-input"></i>
+            <i id="ic-clear" class="fa fa-close ic-input"></i>
+        </div>
+    </div>
+    <div id="heatmap" style="width:100%; height:100%"></div>
+    <div id="marker-safe-place" hidden></div>
+    <div id="marker-lat" hidden></div>
+    <div id="marker-long" hidden></div>
+</body>
+
+</html>

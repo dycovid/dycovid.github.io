@@ -1,0 +1,232 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+html { 
+    height: 100% 
+}
+body { 
+    height: 100%; 
+    margin: 0; 
+    padding: 0;
+    font-family: 'Poppins', sans-serif !important;
+}
+#heatmap { 
+    height: 100% 
+}
+#description {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+}
+#infowindow-content .title {
+  font-weight: bold;
+}
+#infowindow-content {
+  display: none;
+}
+#map #infowindow-content {
+  display: inline;
+}
+#pac-input {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-top: 20px;
+  text-overflow: ellipsis;
+  width: 90%;
+  height: 35px;
+  left: 5% !important;
+}
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+#title {
+  color: #fff;
+  background-color: #4d90fe;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 6px 12px;
+}
+#target {
+  width: 345px;
+}
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.icon {
+  padding: 15px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+  height: 3.2em;
+}
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+#search-input::placeholder {
+  color: #4A4A4A !important;
+}
+#search {
+  -webkit-box-align: center;
+          align-items: center;
+  background: #ffffff;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  margin: 0.5em 0;
+  padding: 0.5em 0.5em 0.5em 1em;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  box-shadow: 0 0 13px 3px #00000042;
+}
+#search input {
+  -webkit-appearance: none;
+      -moz-appearance: none;
+          appearance: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  outline: 0;
+}
+#search input {
+  -webkit-box-flex: 1;
+  flex: 1;
+  height: 2.8em;
+  padding-right: 0.6em;
+}
+#ic-clear {
+  display: none;
+}
+.ic-input {
+  font-size: 1.4em;
+  margin-right: 1.2em;
+  color: #4A4A4A;
+}
+#div-alert {
+  left: 14px !important;
+}
+/** THE CONTAINER */
+#cont {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+
+  height: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+/* Different target positions: */
+#cont.aligned-bottom {
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+#cont.aligned-top,
+#cont.aligned-top-wide {
+  align-items: flex-start;
+}
+#cont.centered {
+  align-items: center;
+}
+#cont.aligned-top-sparse {
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+/** CARDS */
+/* Card Material candy: */
+.card {
+  width: 120px;
+  padding: 10px 7px 10px 10px;
+  margin-right: 15px;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  background-color: #fff;
+  color: darkgrey;
+  transform-origin: top left;
+  will-change: transform;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card > * {
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#div-create-alert {
+  position:relative;
+  border-width:2px;
+  margin-top: 0.3em;
+  float: left;
+  text-align: end;
+}
+#div-create-alert > a {
+  border-radius: 35px;
+  background-image: linear-gradient(to right, #E42A4D 0%, #FF8A50 100%);
+  width: 8em;
+  border-color: inherit !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 14px;
+}
+#div-card {
+  position: relative;
+  border-width:2px;
+  width: 100%;
+  left:0px;
+  float: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif !important;
+  margin-top: 0.8em;
+}
+#div-card > a {
+  color: #4A4A4A;
+  font-weight: 600;
+  font-size: 1.7em;
+}
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+} 
+.group:after {
+  clear: both;
+}
+.group {
+   zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+   height: 38% !important;
+}
+.place-details {
+  color: #4A4A4A;
+  font-size: 1.3em;
+  font-family: 'Poppins', sans-serif !important;
+  margin-top: 0.2em;
+  margin-bottom: 0.7em !important;
+}
+.quantity-persons {
+  color: #4A4A4A;
+  font-size: 1.3em;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.quantity-persons > p {
+  margin-bottom: 0rem !important;
+}
+  
