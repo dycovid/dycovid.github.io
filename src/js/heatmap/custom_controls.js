@@ -25,7 +25,7 @@ function addYourLocationButton(map) {
     firstChild.style.boxShadow = '0 1px 4px rgba(0,0,0,0.3)';
     firstChild.style.cursor = 'pointer';
     firstChild.style.marginRight = '10px';
-    firstChild.style.padding = '7px 0px 3px 7px';
+    firstChild.style.padding = '0.6em 0.6em 0.6em 0.6em';
     firstChild.title = 'Your Location';
     controlDiv.appendChild(firstChild);
 
