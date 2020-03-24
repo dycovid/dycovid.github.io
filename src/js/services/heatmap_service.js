@@ -2,7 +2,7 @@
 const API_URL = 'https://a0277a12.ngrok.io/';
 
 function createAlert(latitude, longitude, placeName, radius) {
-
+    console.log(latitude, longitude, placeName, radius);
 }
 
 function getPeoplesOnRadius(latitude, longitude, radius) {
