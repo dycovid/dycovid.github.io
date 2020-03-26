@@ -2,7 +2,11 @@ var markers = [];
 var circles = [];
 
 function drawHeatMap(cposition, map) {
-    getLocations().subscribe({
+    // getLocations().subscribe({
+    //     next: data => initHeatmap(data, map),
+    // });
+
+    getSimulateLocations().subscribe({
         next: data => initHeatmap(data, map),
     });
 
@@ -11,10 +15,10 @@ function drawHeatMap(cposition, map) {
 }
 
 function initHeatmap(data, map) {
+    console.log(data);
     new google.maps.visualization.HeatmapLayer({
         data: data
     }).setMap(map);
-    console.log(data);
 }
 
 function bindClickMap(map) {
