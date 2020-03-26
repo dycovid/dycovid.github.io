@@ -15,19 +15,52 @@ function getPeoplesOnRadius(latitude, longitude, radius) {
     });
 }
 
+function getSimulateLocations() {
+    return Rx.Observable.create((observer) => {
+        let clearTimeout;
+        let date = new Date("2020-03-24T13:10:00.000Z");
+        let formattedDate;
+        let index = 0;
+        const loop = () => {
+            date = new Date(date.getTime() + index * 60000);
+            formattedDate = date.toLocaleString("pt-br").substring(0, 16);
+            axios.post(API_URL + 'simulateHeatmap', params = {
+                inicio: formattedDate,
+                fim: formattedDate,
+            }).then(function (response) {
+                clearTimeout = setTimeout(() => {
+                    observer.next(response.data.map(function (element) {
+                        console.log(element);
+                        return { location: new google.maps.LatLng(element[0], element[1]), weight: element[2] };
+                    }));
+                    loop();
+                    index = 5;
+                }, index == 0 ? 0 : 1000);
+            });
+        };
+
+        loop();
+
+        return () => clearTimeout();
+    }).catch(function (error) {
+        observer.error(error);
+    });
+}
+
 function getLocations() {
     return Rx.Observable.create((observer) => {
         let clearTimeout;
         let index = 0;
         const loop = () => {
-            index++;
-            axios.get(API_URL + 'getHeatmapAllusersWithoutSafeplace').then(function (response) {
+            axios.get(API_URL + 'getHeatmapAllUsersWithoutSafeplace').then(function (response) {
+                console.log(index);
                 clearTimeout = setTimeout(() => {
                     observer.next(response.data.map(function (element) {
                         return { location: new google.maps.LatLng(element[0], element[1]), weight: element[2] };
                     }));
                     loop();
-                }, index == 1 ? 0 : 30000);
+                    index = 1;
+                }, index == 0 ? 0 : 20000);
             });
         };
 
