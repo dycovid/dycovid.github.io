@@ -1,5 +1,5 @@
-// const API_URL = 'http://127.0.0.1:8082/';
-const API_URL = 'https://a0277a12.ngrok.io/';
+const API_URL = 'http://127.0.0.1:8082/';
+// const API_URL = 'https://a0277a12.ngrok.io/';
 
 function createAlert(latitude, longitude, placeName, radius) {
     console.log(latitude, longitude, placeName, radius);
@@ -21,7 +21,7 @@ function getLocations() {
         let index = 0;
         const loop = () => {
             index++;
-            axios.get(API_URL + 'getHeatmap_allusers_without_safeplace').then(function (response) {
+            axios.get(API_URL + 'getHeatmapAllusersWithoutSafeplace').then(function (response) {
                 clearTimeout = setTimeout(() => {
                     observer.next(response.data.map(function (element) {
                         return { location: new google.maps.LatLng(element[0], element[1]), weight: element[2] };
