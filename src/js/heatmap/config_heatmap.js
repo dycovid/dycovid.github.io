@@ -5,14 +5,8 @@ function initMapConfig() {
 }
 
 function initMap(position) {
-    google.maps.InfoWindow.prototype.set = function (key, val) {
-        // if (key === 'map') {
-        //     if (!this.get('noSupress')) {
-        //         console.log('This InfoWindow is supressed. To enable it, set "noSupress" option to true');
-        //         return;
-        //     }
-        // }
-    }
+    google.maps.InfoWindow.prototype.set = () => {};
+
     let cposition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     let mapOptions = {
         center: cposition,
