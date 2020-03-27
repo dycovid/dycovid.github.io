@@ -15,6 +15,7 @@ function initMap(position) {
         mapTypeControl: false,
         streetViewControl: false,
         fullscreenControl: false,
+        zoomControl: false,
     };
 
     let map = new google.maps.Map(document.getElementById("heatmap"), mapOptions);

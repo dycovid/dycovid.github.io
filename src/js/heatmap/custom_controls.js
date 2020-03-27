@@ -1,14 +1,11 @@
 function initAlert(map) {
     var controlDiv = document.getElementById('div-alert');
     controlDiv.id = 'div-alert';
-    controlDiv.style.width = '81%';
-    controlDiv.style.height = '20%';
-    controlDiv.style.borderRadius = '2px';
-    controlDiv.style.boxShadow = '0 1px 4px rgba(0,0,0,0.3)';
-    controlDiv.style.marginBottom = '26px';
-
+    controlDiv.style.width = '100%';
+    controlDiv.style.marginBottom = '25px';
+    controlDiv.style.padding = '0px 10px';
     controlDiv.index = 1;
-    map.controls[google.maps.ControlPosition.BOTTOM].push(controlDiv);
+    map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(controlDiv);
 }
 
 function addYourLocationButton(map) {
@@ -25,6 +22,7 @@ function addYourLocationButton(map) {
     firstChild.style.boxShadow = '0 1px 4px rgba(0,0,0,0.3)';
     firstChild.style.cursor = 'pointer';
     firstChild.style.marginRight = '10px';
+    firstChild.style.marginBottom = '150px';
     firstChild.style.padding = '0.6em 0.6em 0.6em 0.6em';
     firstChild.style.display = 'flex';
     firstChild.style.alignItems = 'center';
