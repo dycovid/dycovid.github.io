@@ -18,11 +18,11 @@ function addYourLocationButton(map) {
     firstChild.style.outline = 'none';
     firstChild.style.width = '40px';
     firstChild.style.height = '40px';
-    firstChild.style.borderRadius = '2px';
+    firstChild.style.borderRadius = '50%';
     firstChild.style.boxShadow = '0 1px 4px rgba(0,0,0,0.3)';
     firstChild.style.cursor = 'pointer';
     firstChild.style.marginRight = '10px';
-    firstChild.style.marginBottom = '150px';
+    firstChild.style.marginBottom = '160px';
     firstChild.style.padding = '0.6em 0.6em 0.6em 0.6em';
     firstChild.style.display = 'flex';
     firstChild.style.alignItems = 'center';
