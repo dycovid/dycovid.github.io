@@ -1,24 +1,26 @@
 var markers = [];
 var circles = [];
+var heatmap;
 
 function drawHeatMap(cposition, map) {
+    heatmap = new google.maps.visualization.HeatmapLayer();
     // getLocations().subscribe({
     //     next: data => initHeatmap(data, map),
     // });
 
     getSimulateLocations().subscribe({
-        next: data => initHeatmap(data, map),
+        next: data => initHeatmap(data, map, heatmap),
     });
 
     bindClickMap(map);
     getCurrentPosition(cposition, map);
 }
 
-function initHeatmap(data, map) {
+function initHeatmap(data, map, heatmap) {
     console.log(data);
-    new google.maps.visualization.HeatmapLayer({
-        data: data
-    }).setMap(map);
+    heatmap.setMap(null);
+    heatmap.setMap(map);
+    heatmap.setData(data);
 }
 
 function bindClickMap(map) {

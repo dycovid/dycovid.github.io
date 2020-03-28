@@ -19,6 +19,11 @@ function hideSearchIcons(icClearDisplay, icSearchDisplay) {
     }
 }
 
+function getFormattedDate(date) {
+    return date.getUTCDate() + "/" + (date.getUTCMonth() + 1) + "/" + date.getUTCFullYear()
+        + " " + date.getUTCHours() + ":" + date.getUTCMinutes();
+}
+
 function createCircleAndMarker(map, marker, lat, long) {
     let circle = getCircle(map, lat, long);
 

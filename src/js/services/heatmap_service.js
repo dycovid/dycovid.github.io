@@ -1,5 +1,6 @@
 const API_URL = 'http://127.0.0.1:8082/';
 // const API_URL = 'https://a0277a12.ngrok.io/';
+const SIMULATE_URL = 'simulateHeatmapCentersWithoutSafeplace';
 
 function createAlert(latitude, longitude, placeName, radius) {
     console.log(latitude, longitude, placeName, radius);
@@ -18,24 +19,24 @@ function getPeoplesOnRadius(latitude, longitude, radius) {
 function getSimulateLocations() {
     return Rx.Observable.create((observer) => {
         let clearTimeout;
-        let date = new Date("2020-03-24T13:10:00.000Z");
+        let date = new Date("2020-03-24T10:10:00.000Z");
         let formattedDate;
-        let index = 0;
+        let increment = 0;
         const loop = () => {
-            date = new Date(date.getTime() + index * 60000);
-            formattedDate = date.toLocaleString("pt-br").substring(0, 16);
-            axios.post(API_URL + 'simulateHeatmap', params = {
+            formattedDate = getFormattedDate(new Date(date.getTime() + increment * 60000));
+            axios.post(API_URL + 'simulateHeatmap', {
                 inicio: formattedDate,
                 fim: formattedDate,
+                limite: 1,
+                plus: true,
             }).then(function (response) {
                 clearTimeout = setTimeout(() => {
                     observer.next(response.data.map(function (element) {
-                        console.log(element);
                         return { location: new google.maps.LatLng(element[0], element[1]), weight: element[2] };
                     }));
                     loop();
-                    index = 5;
-                }, index == 0 ? 0 : 1000);
+                    increment += 5;
+                }, increment == 0 ? 0 : 3000);
             });
         };
 
