@@ -1,14 +1,11 @@
 function initAlert(map) {
     var controlDiv = document.getElementById('div-alert');
     controlDiv.id = 'div-alert';
-    controlDiv.style.width = '81%';
-    controlDiv.style.height = '20%';
-    controlDiv.style.borderRadius = '2px';
-    controlDiv.style.boxShadow = '0 1px 4px rgba(0,0,0,0.3)';
-    controlDiv.style.marginBottom = '26px';
-
+    controlDiv.style.width = '100%';
+    controlDiv.style.marginBottom = '25px';
+    controlDiv.style.padding = '0px 10px';
     controlDiv.index = 1;
-    map.controls[google.maps.ControlPosition.BOTTOM].push(controlDiv);
+    map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(controlDiv);
 }
 
 function addYourLocationButton(map) {
@@ -19,21 +16,24 @@ function addYourLocationButton(map) {
     firstChild.style.backgroundColor = '#fff';
     firstChild.style.border = 'none';
     firstChild.style.outline = 'none';
-    firstChild.style.width = '3.6em';
-    firstChild.style.height = '3.6em';
-    firstChild.style.borderRadius = '2px';
+    firstChild.style.width = '40px';
+    firstChild.style.height = '40px';
+    firstChild.style.borderRadius = '50%';
     firstChild.style.boxShadow = '0 1px 4px rgba(0,0,0,0.3)';
     firstChild.style.cursor = 'pointer';
     firstChild.style.marginRight = '10px';
+    firstChild.style.marginBottom = '160px';
     firstChild.style.padding = '0.6em 0.6em 0.6em 0.6em';
+    firstChild.style.display = 'flex';
+    firstChild.style.alignItems = 'center';
+    firstChild.style.justifyContent = 'center';
     firstChild.title = 'Your Location';
     controlDiv.appendChild(firstChild);
 
     var secondChild = document.createElement('div');
-    secondChild.style.width = '4.2em';
-    secondChild.style.height = '3.4em';
+    secondChild.style.width = '24px';
+    secondChild.style.height = '24px';
     secondChild.style.backgroundImage = 'url(./src/img/gps-location.svg)';
-    secondChild.style.backgroundPosition = '0 0';
     secondChild.style.backgroundRepeat = 'no-repeat';
     firstChild.appendChild(secondChild);
 
