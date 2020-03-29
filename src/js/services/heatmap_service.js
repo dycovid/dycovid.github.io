@@ -3,7 +3,7 @@ const API_URL = 'https://9e99b32b.ngrok.io/';
 const SIMULATE_URL = 'getHeatmapAllusersPlusCentersWithSafeplace';
 
 function createAlert(deviceId, latitude, longitude, placeName, radius) {
-    if (deviceId != null) {
+    if (deviceId != '') {
         axios.post(API_URL + 'addAlert', {
             device_id: deviceId,
             alert_lat: latitude,
