@@ -89,8 +89,9 @@ function bindEvents(map, searchInput, clearIcon, searchBox) {
             let lat = parseFloat(document.getElementById('marker-lat').innerHTML).toFixed(6);
             let long = parseFloat(document.getElementById('marker-long').innerHTML).toFixed(6);
             let placeName = document.getElementById('card-title').innerHTML;
-
-            createAlert(lat, long, placeName, circles[0].getRadius() / 1000);
+            let deviceId = document.querySelector("#device-id").innerHTML;
+            
+            createAlert(deviceId, lat, long, placeName, circles[0].getRadius() / 1000);
         }
     });
 }
