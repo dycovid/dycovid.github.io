@@ -16,7 +16,7 @@ function createAlert(deviceId, latitude, longitude, placeName, radius) {
     } else {
         console.log("Device id not defined");
     }
-}   
+}
 
 function getSimulateLocations() {
     return Rx.Observable.create((observer) => {

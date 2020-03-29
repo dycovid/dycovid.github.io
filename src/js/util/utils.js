@@ -73,4 +73,5 @@ function getPeoplesOnRadius(latitude, longitude, radius) {
 
         return heatmapData.filter(filter).length;
     }
+    return 0;
 }
