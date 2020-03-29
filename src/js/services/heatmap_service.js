@@ -1,6 +1,6 @@
-const API_URL = 'http://127.0.0.1:8082/';
-// const API_URL = 'https://a0277a12.ngrok.io/';
-const SIMULATE_URL = 'simulateHeatmapCentersWithoutSafeplace';
+// const API_URL = 'http://127.0.0.1:8082/';
+const API_URL = 'https://d17af1f6.ngrok.io/';
+const SIMULATE_URL = 'getHeatmapAllusersPlusCentersWithSafeplace';
 
 function createAlert(latitude, longitude, placeName, radius) {
     console.log(latitude, longitude, placeName, radius);
@@ -49,25 +49,30 @@ function getSimulateLocations() {
 }
 
 function getLocations() {
+    // return Rx.Observable.create((observer) => {
+    //     let clearTimeout;
+    //     let index = 0;
+    //     const loop = () => {
+    //         axios.get(API_URL + 'getHeatmapAllusersPlusCentersWithSafeplace').then(function (response) {
+    //             clearTimeout = setTimeout(() => {
+    //                 observer.next(response.data.map(function (element) {
+    //                     return { location: new google.maps.LatLng(element[0], element[1]), weight: element[2] };
+    //                 }));
+    //                 loop();
+    //                 index = 1;
+    //             }, index == 0 ? 0 : 500000);
+    //         });
+    //     };
+
+    //     loop();
+
+    //     return () => clearTimeout();
     return Rx.Observable.create((observer) => {
-        let clearTimeout;
-        let index = 0;
-        const loop = () => {
-            axios.get(API_URL + 'getHeatmapAllUsersWithoutSafeplace').then(function (response) {
-                console.log(index);
-                clearTimeout = setTimeout(() => {
-                    observer.next(response.data.map(function (element) {
-                        return { location: new google.maps.LatLng(element[0], element[1]), weight: element[2] };
-                    }));
-                    loop();
-                    index = 1;
-                }, index == 0 ? 0 : 20000);
-            });
-        };
-
-        loop();
-
-        return () => clearTimeout();
+        axios.get(API_URL + 'getHeatmapAllusersPlusCentersWithSafeplace').then(function (response) {
+            observer.next(response.data.map(function (element) {
+                return { location: new google.maps.LatLng(element[0], element[1]), weight: element[2] };
+            }));
+        });
     }).catch(function (error) {
         observer.error(error);
     });
