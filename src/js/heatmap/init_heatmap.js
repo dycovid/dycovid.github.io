@@ -4,13 +4,14 @@ var heatmap;
 
 function drawHeatMap(cposition, map) {
     heatmap = new google.maps.visualization.HeatmapLayer();
-    // getLocations().subscribe({
-    //     next: data => initHeatmap(data, map),
-    // });
 
-    getSimulateLocations().subscribe({
+    getLocations().subscribe({
         next: data => initHeatmap(data, map, heatmap),
     });
+
+    // getSimulateLocations().subscribe({
+    //     next: data => initHeatmap(data, map, heatmap),
+    // });
 
     bindClickMap(map);
     getCurrentPosition(cposition, map);
