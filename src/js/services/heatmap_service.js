@@ -1,5 +1,5 @@
-const API_URL = 'http://127.0.0.1:8082/';
-// const API_URL = 'https://a0277a12.ngrok.io/';
+// const API_URL = 'http://127.0.0.1:8082/';
+const API_URL = 'http://d17af1f6.ngrok.io/';
 const SIMULATE_URL = 'getHeatmapAllusersPlusCentersWithSafeplace';
 
 function createAlert(latitude, longitude, placeName, radius) {
