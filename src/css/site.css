@@ -188,6 +188,7 @@ body {
   border-color: inherit !important;
   font-family: 'Poppins', sans-serif !important;
   font-size: 1.3em;
+  color: white;
 }
 #div-card {
   position: relative;
