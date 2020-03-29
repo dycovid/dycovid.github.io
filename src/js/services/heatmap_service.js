@@ -15,7 +15,7 @@ function createAlert(deviceId, latitude, longitude, placeName, radius) {
             return response;
         });
     }
-}   
+}
 
 function getSimulateLocations() {
     return Rx.Observable.create((observer) => {
