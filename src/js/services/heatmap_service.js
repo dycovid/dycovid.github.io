@@ -2,7 +2,8 @@
 const API_URL = 'https://d17af1f6.ngrok.io/';
 const SIMULATE_URL = 'getHeatmapAllusersPlusCentersWithSafeplace';
 
-function createAlert(latitude, longitude, placeName, radius) {
+function createAlert(deviceId, latitude, longitude, placeName, radius) {
+    alert(deviceId);
     console.log(latitude, longitude, placeName, radius);
 }
 
