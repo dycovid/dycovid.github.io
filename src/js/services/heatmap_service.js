@@ -1,19 +1,9 @@
-// const API_URL = 'http://127.0.0.1:8082/';
-const API_URL = 'https://d17af1f6.ngrok.io/';
+const API_URL = 'http://127.0.0.1:8082/';
+// const API_URL = 'https://d17af1f6.ngrok.io/';
 const SIMULATE_URL = 'getHeatmapAllusersPlusCentersWithSafeplace';
 
 function createAlert(latitude, longitude, placeName, radius) {
     console.log(latitude, longitude, placeName, radius);
-}
-
-function getPeoplesOnRadius(latitude, longitude, radius) {
-    return axios.post(API_URL + 'getPeopleOnRadius', {
-        vef_lat: latitude,
-        vef_long: longitude,
-        vef_radius: radius,
-    }).then(function (response) {
-        return response;
-    });
 }
 
 function getSimulateLocations() {
@@ -68,7 +58,7 @@ function getLocations() {
 
     //     return () => clearTimeout();
     return Rx.Observable.create((observer) => {
-        axios.get(API_URL + 'getHeatmapAllusersPlusCentersWithSafeplace').then(function (response) {
+        axios.get(API_URL + 'simulateHeatmap').then(function (response) {
             observer.next(response.data.map(function (element) {
                 return { location: new google.maps.LatLng(element[0], element[1]), weight: element[2] };
             }));

@@ -59,3 +59,18 @@ function setSummaryAlert(value) {
     document.getElementById('div-alert').style.display = 'block';
     document.getElementById('card-title').innerHTML = value;
 }
+
+function getPeoplesOnRadius(latitude, longitude, radius) {
+    if (heatmapData.length != 0) {
+        let center = new google.maps.LatLng(latitude, longitude);
+
+        const filter = (element) => {
+            let diff = google.maps.geometry.spherical.computeDistanceBetween(center, element.location);
+            if (diff < radius) {
+                return element;
+            }
+        }
+
+        return heatmapData.filter(filter).length;
+    }
+}
