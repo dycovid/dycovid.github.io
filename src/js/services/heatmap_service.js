@@ -1,11 +1,21 @@
 // const API_URL = 'http://127.0.0.1:8082/';
-const API_URL = 'https://d17af1f6.ngrok.io/';
+const API_URL = 'https://9e99b32b.ngrok.io/';
 const SIMULATE_URL = 'getHeatmapAllusersPlusCentersWithSafeplace';
 
 function createAlert(deviceId, latitude, longitude, placeName, radius) {
-    alert(deviceId);
     console.log(latitude, longitude, placeName, radius);
-}
+    if (deviceId != null) {
+        axios.post(API_URL + 'addAlert', {
+            device_id: deviceId,
+            alert_lat: latitude,
+            alert_long: longitude,
+            alert_radius: radius,
+            alert_local_name: placeName,
+        }).then(function (response) {
+            return response;
+        });
+    }
+}   
 
 function getPeoplesOnRadius(latitude, longitude, radius) {
     return axios.post(API_URL + 'getPeopleOnRadius', {
