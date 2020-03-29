@@ -120,6 +120,9 @@ body {
 #div-alert {
   left: 0px !important;
 }
+#device-id {
+  display: none;
+}
 /** THE CONTAINER */
 #cont {
   display: flex;
