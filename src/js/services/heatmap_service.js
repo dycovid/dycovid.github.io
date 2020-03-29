@@ -17,16 +17,6 @@ function createAlert(deviceId, latitude, longitude, placeName, radius) {
     }
 }   
 
-function getPeoplesOnRadius(latitude, longitude, radius) {
-    return axios.post(API_URL + 'getPeopleOnRadius', {
-        vef_lat: latitude,
-        vef_long: longitude,
-        vef_radius: radius,
-    }).then(function (response) {
-        return response;
-    });
-}
-
 function getSimulateLocations() {
     return Rx.Observable.create((observer) => {
         let clearTimeout;
@@ -79,7 +69,7 @@ function getLocations() {
 
     //     return () => clearTimeout();
     return Rx.Observable.create((observer) => {
-        axios.get(API_URL + 'getHeatmapAllusersPlusCentersWithSafeplace').then(function (response) {
+        axios.get(API_URL + 'simulateHeatmap').then(function (response) {
             observer.next(response.data.map(function (element) {
                 return { location: new google.maps.LatLng(element[0], element[1]), weight: element[2] };
             }));

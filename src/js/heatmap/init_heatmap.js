@@ -1,6 +1,6 @@
 var markers = [];
 var circles = [];
-var heatmap;
+var heatmapData = [];
 
 function drawHeatMap(cposition, map) {
     heatmap = new google.maps.visualization.HeatmapLayer();
@@ -19,6 +19,7 @@ function drawHeatMap(cposition, map) {
 
 function initHeatmap(data, map, heatmap) {
     console.log(data);
+    heatmapData = data;
     heatmap.setMap(null);
     heatmap.setMap(map);
     heatmap.setData(data);
@@ -45,9 +46,7 @@ function setRadius(map, marker) {
 
     let circle = createCircleAndMarker(map, marker, lat, long);
 
-    getPeoplesOnRadius(lat, long, circle.getRadius() / 1000).then(function (result) {
-        document.getElementById('total-persons').innerHTML = result.data['ans'];
-    });
+    document.getElementById('total-persons').innerHTML = getPeoplesOnRadius(lat, long, circle.getRadius());
 }
 
 function configCircle(circle) {
@@ -63,9 +62,7 @@ function configCircle(circle) {
         let lat = parseFloat(document.getElementById('marker-lat').innerHTML).toFixed(6);
         let lng = parseFloat(document.getElementById('marker-long').innerHTML).toFixed(6);
 
-        getPeoplesOnRadius(lat, lng, circle.getRadius() / 1000).then(function (result) {
-            document.getElementById('total-persons').innerHTML = result.data['ans'];
-        });
+        document.getElementById('total-persons').innerHTML = getPeoplesOnRadius(lat, lng, circle.getRadius());
     });
 }
 
