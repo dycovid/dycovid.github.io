@@ -4,7 +4,7 @@ const SIMULATE_URL = 'getHeatmapAllusersPlusCentersWithSafeplace';
 
 function createAlert(deviceId, latitude, longitude, placeName, radius) {
     if (deviceId != '') {
-        axios.post(API_URL + 'addAlert', {
+        axios.post(API_URL + 'api/user/addAlert', {
             device_id: deviceId,
             alert_lat: latitude,
             alert_long: longitude,
