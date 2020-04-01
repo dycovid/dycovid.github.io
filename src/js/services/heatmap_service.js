@@ -1,5 +1,5 @@
-// const API_URL = 'http://127.0.0.1:8082/';
-const API_URL = 'https://api-dycovid.mybluemix.net/';
+const API_URL = 'http://localhost:5000/';
+// const API_URL = 'https://api-dycovid.mybluemix.net/';
 const SIMULATE_URL = 'getHeatmapAllusersPlusCentersWithSafeplace';
 
 function createAlert(deviceId, latitude, longitude, placeName, radius) {
@@ -70,8 +70,11 @@ function getLocations() {
 
     //     return () => clearTimeout();
     return Rx.Observable.create((observer) => {
-        axios.get(API_URL + 'api/heatmap/simulateHeatmap').then(function (response) {
-            observer.next(response.data.map(function (element) {
+        axios.post(API_URL + 'api/heatmap/getSnapshot', {
+            qtd: 180000,
+            plus: true,
+        }).then(function (response) {
+            observer.next(response.data.data.map(function (element) {
                 return { location: new google.maps.LatLng(element[0], element[1]), weight: element[2] };
             }));
         });
