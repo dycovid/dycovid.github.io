@@ -1,5 +1,5 @@
-const API_URL = 'http://localhost:5000/'
-// const API_URL = 'https://api-dycovid.mybluemix.net/';
+// const API_URL = 'http://localhost:5000/'
+const API_URL = 'https://api-dycovid.mybluemix.net/';
 const SIMULATE_URL = 'getHeatmapAllusersPlusCentersWithSafeplace';
 
 function createAlert(deviceId, latitude, longitude, placeName, radius) {
