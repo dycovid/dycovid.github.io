@@ -435,7 +435,7 @@ input:-webkit-autofill:focus {
 .home-area .mobile-image {
     margin-right: 0;
     margin-left: 0;
-    margin-bottom: -158px;
+    /*margin-bottom: -158px;*/
 }
 
 /*-- 8. Progress-Area --*/
@@ -451,7 +451,7 @@ input:-webkit-autofill:focus {
 
 .progress-area .mobile-image {
     margin-top: -90px;
-    margin-bottom: -153px;
+    /*margin-bottom: -153px;*/
 }
 
 /*-- 9. Video-Area --*/
