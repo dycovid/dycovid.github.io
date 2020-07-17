@@ -1,0 +1,209 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	height: 100vh;
+	position: relative;
+}
+header section {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.headings h1 {
+	font-size: 64px;
+	font-weight: bold;
+}
+
+.headings h2 {
+	font-size: 48px;
+	font-family: Poppins, sans-serif;
+	color: hsl(254, 39%, 25%);
+	margin: 24px 0 32px;
+}
+
+.headings .bttn-white:hover {
+	transform: scale(1.1);
+}
+
+.parallax {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	background: #6e59b7;
+	background: linear-gradient(
+		145deg,
+		#d9d4ec 0%,
+		#aa9dd4 10%,
+		#816dc1 25%,
+		#735eb8 50%,
+		#6e59b7 100%
+	);
+	z-index: -1;
+}
+
+.parallax ul {
+	padding: 0;
+	margin: 0;
+}
+
+.virus {
+	background-image: url('../images/virus.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 550px;
+	height: 550px;
+	opacity: 0.1;
+	transition: 1s;
+}
+
+h1 {
+	font-size: 90px;
+	color: white;
+	margin: 0;
+}
+
+.p-1 {
+	width: 256px;
+	height: 256px;
+	opacity: 0.07;
+	animation: life-1 5s infinite ease-in-out;
+}
+@keyframes life-1 {
+	0% {
+		transform: translate(30vw, 40vh);
+	}
+	50% {
+		transform: translate(33vw, 43vh) scale(1.1) rotate(2deg);
+	}
+	100% {
+		transform: translate(30vw, 40vh);
+	}
+}
+
+.p-2 {
+	opacity: 0.2;
+	animation: life-2 5.4s infinite ease-in-out;
+}
+@keyframes life-2 {
+	0% {
+		transform: translate(-10vw, -5vh);
+	}
+	50% {
+		transform: translate(-13vw, -8vh) scale(1.1) rotate(-5deg);
+	}
+	100% {
+		transform: translate(-10vw, -5vh);
+	}
+}
+
+.p-3 {
+	transform: translate(-5vw, 100vh) rotate(80deg);
+	width: 400px;
+	height: 400px;
+	animation: life-3 8s infinite ease-in-out;
+}
+@keyframes life-3 {
+	0% {
+		transform: translate(-4vw, 70vh) rotate(75deg);
+	}
+	50% {
+		transform: translate(0vw, 74vh) scale(1.2) rotate(78deg);
+	}
+	100% {
+		transform: translate(-4vw, 70vh) rotate(75deg);
+	}
+}
+
+.p-4 {
+	opacity: 0.03;
+	width: 620px;
+	height: 620px;
+	animation: life-4 8s infinite ease-in-out;
+}
+@keyframes life-4 {
+	0% {
+		transform: translate(35vw, -50vh);
+	}
+	50% {
+		transform: translate(35vw, -49vh) scale(0.8) rotate(3deg);
+	}
+	100% {
+		transform: translate(35vw, -50vh);
+	}
+}
+
+.p-5 {
+	animation: life-5 5s infinite ease-in-out;
+}
+@keyframes life-5 {
+	0% {
+		transform: translate(80vw, 30vh);
+	}
+	50% {
+		transform: translate(78vw, 34vh) scale(1.2) rotate(-3deg);
+	}
+	100% {
+		transform: translate(80vw, 30vh);
+	}
+}
+
+.p-6 {
+	width: 128px;
+	height: 128px;
+	animation: life-6 3.6s infinite ease-in-out;
+}
+@keyframes life-6 {
+	0% {
+		transform: translate(90vw, 30vh) rotate(200deg);
+	}
+	50% {
+		transform: translate(78vw, 34vh) scale(0.9) rotate(197deg);
+	}
+	100% {
+		transform: translate(90vw, 30vh) rotate(200deg);
+	}
+}
+
+.p-7 {
+	opacity: 0.03;
+	width: 700px;
+	height: 700px;
+	animation: life-7 8s infinite ease-in-out;
+}
+@keyframes life-7 {
+	0% {
+		transform: translate(70vw, -40vh) rotate(45deg);
+	}
+	50% {
+		transform: translate(72vw, -39vh) scale(1.2) rotate(47deg);
+	}
+	100% {
+		transform: translate(70vw, -40vh) rotate(45deg);
+	}
+}
+
+.p-8 {
+	opacity: 0.07;
+	width: 400px;
+	height: 400px;
+	animation: life-8 6s infinite ease-in-out;
+}
+@keyframes life-8 {
+	0% {
+		transform: translate(50vw, 50vh) rotate(-200deg);
+	}
+	50% {
+		transform: translate(52vw, 52vh) scale(0.7) rotate(-202deg);
+	}
+	100% {
+		transform: translate(50vw, 50vh) rotate(-200deg);
+	}
+}
