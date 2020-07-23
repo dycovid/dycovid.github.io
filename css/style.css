@@ -488,7 +488,7 @@ input:-webkit-autofill:focus {
 .feature-area {
     color: #ffffff;
     background-color: #7F72CD;
-    background-image: url('images/feature-bg.png');
+    background-image: url('../images/feature-bg.png');
     background-position: bottom -120px center;
     background-repeat: no-repeat;
     background-size: auto 94%;

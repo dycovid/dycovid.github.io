@@ -6,6 +6,7 @@ body {
 header {
 	height: 100vh;
 	position: relative;
+	overflow: hidden;
 }
 header section {
 	height: 100%;
@@ -30,6 +31,10 @@ header section {
 	transform: scale(1.1);
 }
 
+.headings a ~ a {
+	margin-left: 1rem;
+}
+
 .parallax {
 	position: absolute;
 	top: 0;
@@ -49,6 +54,25 @@ header section {
 	z-index: -1;
 }
 
+.light {
+	height: 100vh;
+    width: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+		background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+		animation: scan 5s ease-in-out infinite;
+		opacity: .3;
+}
+@keyframes scan {
+	0%,100% {
+		left: 0;
+	}
+	50% {
+		left: 96%;
+	}
+}
+
 .parallax ul {
 	padding: 0;
 	margin: 0;
@@ -62,6 +86,14 @@ header section {
 	height: 550px;
 	opacity: 0.1;
 	transition: 1s;
+}
+
+.device-wrapper {
+	max-width: 400px;
+	width: 100%;
+}
+.device::after {
+	z-index: 2;
 }
 
 h1 {
@@ -207,3 +239,141 @@ h1 {
 		transform: translate(50vw, 50vh) rotate(-200deg);
 	}
 }
+
+.about-section {
+	overflow: hidden;
+}
+
+.about-logo {
+	margin: 1.5rem auto 2rem;
+	width: 180px;
+	display: block;
+}
+
+.about-text {
+	margin-bottom: 5rem;
+}
+
+.about-item img {
+	width: 100%;
+	max-width: 450px;
+	margin: 0 auto;
+	display: block;
+}
+.about-item .item-text {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+
+.maps {
+	background-image: url('../new/images/maps_brasil.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	margin: -8.8rem 0 0;
+	padding: 20vh 0 15vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.partners {
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.partner {
+	width: 100px;
+	height: 100px;
+	margin: 2rem 2rem 0;
+	border-radius: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+	transition: .2s;
+}
+
+.partner img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	border-radius: 100%;
+}
+
+.partner:hover {
+	box-shadow: 0 6px 12px 0 rgba(0,0,0,0.1);
+	transform: translateY(-4px);
+}
+
+.contact {
+	padding: 5rem 0 1rem;
+}
+
+.mamba-marquee {
+	position: relative;
+	color: #1b222c;
+	font-weight: bold;
+}
+.mamba-marquee:hover {
+	animation: bounceMamba 1s infinite;
+}
+@keyframes bounceMamba {
+	0% {
+		-webkit-transform: scale(.95);
+			transform: scale(.95)
+	}
+	50% {
+			-webkit-transform: scale(1.01);
+			transform: scale(1.01)
+	}
+	100% {
+			-webkit-transform: scale(.95);
+			transform: scale(.95)
+	}
+}
+
+.mamba-marquee marquee {
+	position: absolute;
+}
+.mamba-marquee marquee.first {
+	top: 12px;
+}
+.mamba-marquee marquee.last {
+	bottom: 12px;
+}
+
+.social-links {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.social-links p a i {
+	margin-right: 2rem;
+}
+
+footer {
+	padding: 1.5rem 0;
+	background-color: #7f72cd;
+	color: #fff;
+}
+
+footer .container {
+	display: flex;
+	justify-content: space-between;
+}
+
+footer a {
+	color: #fff;
+}
+footer a:hover {
+	color: #382c7d;
+}
+
+
+
