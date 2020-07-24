@@ -20,6 +20,33 @@ body {
 	transform: scale(1.1);
 }
 
+.radial-bg {
+	background: #6e59b7;
+	background: radial-gradient(circle, #a496d0 0%, #735eb8 84%, #6e59b7 100%);
+}
+
+.preloader {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.preloader svg {
+	animation: rotate 2s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+}
+.preloader svg g {
+	fill: #dff473;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 header {
 	height: 100vh;
 	position: relative;
@@ -363,8 +390,6 @@ h1 {
 	align-items: center;
 	justify-content: space-evenly;
 	padding: 4rem 0;
-	background: #6e59b7;
-	background: radial-gradient(circle, #a496d0 0%, #735eb8 84%, #6e59b7 100%);
 	color: #fff;
 }
 .download h3 {
