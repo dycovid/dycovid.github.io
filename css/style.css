@@ -394,7 +394,8 @@ input:-webkit-autofill:focus {
 }
 
 .mainmenu-area .navbar-brand img {
-    height: 40px;
+		height: 40px;
+		transition: .5s;
 }
 
 /*-- 6. Page-Title --*/
