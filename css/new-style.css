@@ -479,20 +479,19 @@ footer a:hover {
 	}
 }
 @media (max-width: 767px) {
+	header {
+		height: 125vh;
+	}
 	.headings {
 		z-index: 2;
 	}
 	.headings > div {
-		background-color: rgba(118, 97, 186, 0.9);
 		border-radius: 16px;
 		text-align: center;
 	}
 	.phone-carousel-column {
-		position: absolute;
-		top: 10vh;
-		left: 0;
-		z-index: 1;
-		opacity: 0.9;
+		margin-top: 2rem;
+		margin-bottom: -33rem;
 	}
 	.feature-area .mobile-image {
 		margin-bottom: 0;
