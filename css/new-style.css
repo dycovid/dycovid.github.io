@@ -5,6 +5,7 @@ body {
 
 .mainmenu-area {
 	padding: 12px 140px 12px 12px;
+	z-index: 1040;
 }
 
 .mainmenu-area ul.nav.navbar-nav li a.active,
@@ -352,6 +353,13 @@ h1 {
 	flex-direction: column;
 }
 
+.maps h3 > span {
+	display: block;
+	margin: 1rem 0;
+	font-weight: bold;
+	color: #6e59b7;
+}
+
 .partners {
 	padding: 0;
 	list-style: none;
@@ -466,6 +474,9 @@ footer a {
 footer a:hover {
 	color: #382c7d;
 }
+footer a:focus {
+	color: #ffffff;
+}
 #scrollUp {
 	right: 16px;
 	bottom: 16px;
@@ -490,6 +501,10 @@ footer a:hover {
 }
 .scroll-top:hover path {
 	fill: #fff;
+}
+
+.pdf {
+	height: 80vh;
 }
 /* Medias */
 @media (max-width: 991px) {
@@ -566,5 +581,11 @@ footer a:hover {
 	}
 	.phone-quiz {
 		margin-bottom: -13rem;
+	}
+	.questions-area {
+		padding-top: 100px;
+	}
+	.toggole-boxs h3:first-child {
+		margin-top: 32px;
 	}
 }

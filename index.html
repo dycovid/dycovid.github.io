@@ -204,7 +204,6 @@
 						<h4>Contact Tracing</h4>
 						<p>Descubra se você cruzou com pessoas infectadas</p>
 					</div>
-					<div class="space-60"></div>
 					<div class="service-box wow fadeInUp" data-wow-delay="0.4s">
 						<div class="box-icon">
 							<i class="fas fa-exclamation-triangle"></i>
@@ -212,15 +211,6 @@
 						<h4>Alertas</h4>
 						<p>Crie alertas num lugar que você precisar ir que a gente te avisa quando a barra estiver limpa!</p>
 					</div>
-					<div class="space-60"></div>
-					<!--<div class="service-box wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="box-icon">
-                            <i class="lnr lnr-cloud-download"></i>
-                        </div>
-                        <h4>Cloud Storage</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div> -->
-					<div class="space-60"></div>
 				</div>
 				<div class="hidden-xs hidden-sm col-md-4">
 					<figure class="mobile-image wow fadeInUp" data-wow-delay="1s">
@@ -236,7 +226,6 @@
 						<h4>Tecnologia de ponta</h4>
 						<p>Utilizando GPS e Bluetooth para determinar contatos entre os usuários!</p>
 					</div>
-					<div class="space-60"></div>
 					<div class="service-box wow fadeInUp" data-wow-delay="0.2s">
 						<div class="box-icon">
 							<i class="fas fa-user-secret"></i>
@@ -250,7 +239,7 @@
 	</section>
 
 	<section class="maps">
-		<h3>Salvando vidas com o apoio de:</h3>
+		<h3 class="text-center">Salvando vidas em <span>Pernambuco</span> com o apoio de:</h3>
 		<ul class="partners">
 			<li class="partner wow fadeInUp" data-wow-delay="0.2s">
 				<img src="new/images/partners/gov-pe.png" alt="">
@@ -287,7 +276,7 @@
 						Saúde</a>
 				</p>
 			</div>
-			<div class="row">
+			<div class="row wow fadeIn" data-wow-delay="0.2s">
 				<div class="col-xs-12 col-sm-6">
 					<div class="toggole-boxs">
 						<h3>Como eu me contamino com esse vírus? </h3>
@@ -315,7 +304,6 @@
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6">
-					<div class="space-20 hidden visible-xs"></div>
 					<div class="toggole-boxs">
 						<h3>Como posso me prevenir? </h3>
 						<div>
@@ -372,7 +360,7 @@
 		<div class="row">
 			<div class="col-md-6">
 				<a href="https://mambalabs.com.br" target="_blank">
-					<div class="mamba-marquee bounceIn">
+					<div class="mamba-marquee bounceIn wow zoomIn">
 						<marquee direction="" class="first">Conheça a MambaLabs</marquee>
 						<marquee direction="right" class="last">Conheça a MambaLabs</marquee>
 						<img src="images/logo-mamba.svg" alt="" class="">
@@ -381,22 +369,22 @@
 			</div>
 			<div class="col-md-5 offset-md-1 social-links">
 				<div class="row">
-					<p class="col-sm-6 col-md-12">
+					<p class="col-sm-6 col-md-12 wow fadeInRight" data-wow-delay="0.2s">
 						<a href="mailto:dynamiccovid@gmail.com">
 							<i class="far fa-envelope"></i> <span>dynamiccovid@gmail.com</span>
 						</a>
 					</p>
-					<p class="col-sm-6 col-md-12">
+					<p class="col-sm-6 col-md-12 wow fadeInRight" data-wow-delay="0.4s">
 						<a href="https://www.facebook.com/Dycovid/">
 							<i class="fab fa-facebook"></i> <span>Dycovid</span>
 						</a>
 					</p>
-					<p class="col-sm-6 col-md-12">
+					<p class="col-sm-6 col-md-12 wow fadeInRight" data-wow-delay="0.6s">
 						<a href="https://www.instagram.com/dycovid/">
 							<i class="fab fa-instagram"></i> <span>@dycovid</span>
 						</a>
 					</p>
-					<p class="col-sm-6 col-md-12">
+					<p class="col-sm-6 col-md-12 wow fadeInRight" data-wow-delay="0.8s">
 						<a href="https://www.twitter.com/dycovid/">
 							<i class="fab fa-twitter"></i> <span>@dycovid</span>
 						</a>
@@ -412,9 +400,24 @@
 			<span>
 				Copyright &copy; Mamba &lt;labs/> 2020
 			</span>
-			<a href="src/dycovid-politica-privacidade.pdf" target="_blank">Política de privacidade</a>
+			<a href="#" data-toggle="modal" data-target="#policy">Política de privacidade</a>
 		</div>
 	</footer>
+
+	<!-- Modal -->
+	<div class="modal fade" id="policy" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+		aria-hidden="true">
+		<div class="modal-dialog modal-xl">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<embed class="pdf" src="./src/dycovid-politica-privacidade.pdf" width="100%" />
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<script src="js/vendor/jquery-1.12.4.min.js"></script>
 	<script src="js/vendor/jquery-ui.min.js"></script>
