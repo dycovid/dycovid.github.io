@@ -354,8 +354,8 @@ h1 {
 }
 
 .maps h3 > span {
-	display: block;
-	margin: 1rem 0;
+	/* display: block;
+	margin: 1rem 0; */
 	font-weight: bold;
 	color: #6e59b7;
 }
@@ -587,5 +587,8 @@ footer a:focus {
 	}
 	.toggole-boxs h3:first-child {
 		margin-top: 32px;
+	}
+	.maps {
+		padding: 16vh 16px 12vh;
 	}
 }
